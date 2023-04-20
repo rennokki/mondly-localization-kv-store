@@ -30,29 +30,37 @@ const submit = () => {
             link that will allow you to choose a new one.
         </div>
 
-        <div v-if="status" class="mb-4 font-medium text-sm text-green-600 dark:text-green-400">
+        <div v-if="status"
+            class="mb-4 font-medium text-sm text-green-600 dark:text-green-400"
+        >
             {{ status }}
         </div>
 
         <form @submit.prevent="submit">
             <div>
-                <InputLabel for="email" value="Email" />
+                <InputLabel for="email"
+                    value="Email"
+                />
 
                 <TextInput
                     id="email"
+                    v-model="form.email"
                     type="email"
                     class="mt-1 block w-full"
-                    v-model="form.email"
                     required
                     autofocus
                     autocomplete="username"
                 />
 
-                <InputError class="mt-2" :message="form.errors.email" />
+                <InputError class="mt-2"
+                    :message="form.errors.email"
+                />
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <PrimaryButton :class="{ 'opacity-25': form.processing }"
+                    :disabled="form.processing"
+                >
                     Email Password Reset Link
                 </PrimaryButton>
             </div>

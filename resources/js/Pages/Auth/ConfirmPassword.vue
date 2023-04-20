@@ -27,21 +27,28 @@ const submit = () => {
 
         <form @submit.prevent="submit">
             <div>
-                <InputLabel for="password" value="Password" />
+                <InputLabel for="password"
+                    value="Password"
+                />
                 <TextInput
                     id="password"
+                    v-model="form.password"
                     type="password"
                     class="mt-1 block w-full"
-                    v-model="form.password"
                     required
                     autocomplete="current-password"
                     autofocus
                 />
-                <InputError class="mt-2" :message="form.errors.password" />
+                <InputError class="mt-2"
+                    :message="form.errors.password"
+                />
             </div>
 
             <div class="flex justify-end mt-4">
-                <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <PrimaryButton class="ml-4"
+                    :class="{ 'opacity-25': form.processing }"
+                    :disabled="form.processing"
+                >
                     Confirm
                 </PrimaryButton>
             </div>
