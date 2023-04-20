@@ -1,6 +1,6 @@
 # Mondly Localization KV Store
 
-To compare all the business logic related code (excluding default commits for framework files): [65f548c28f5c1031225386de74d48a511d688666...HEAD](https://github.com/rennokki/mondly-localization-kv-store/compare/65f548c28f5c1031225386de74d48a511d688666...HEAD)
+To compare all the business logic related code (excluding default commits for framework files): [6555ecd...HEAD](https://github.com/rennokki/mondly-localization-kv-store/compare/6555ecd...HEAD)
 
 ## Octane
 
