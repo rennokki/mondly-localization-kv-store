@@ -10,6 +10,6 @@ Particulary, I would have used Octane to process all locales at once with Swoole
 
 ### Caching
 
-Usually, I use [renoki-co/laravel-eloquent-query-cache](https://gituhb.com/renoki-co/laravel-eloquent-query-cache) to cache the queries and handle automatic invalidations.
+Usually, I use [renoki-co/laravel-eloquent-query-cache](https://github.com/renoki-co/laravel-eloquent-query-cache) to cache the queries and handle automatic invalidations.
 
 With Octane, I could have also been using Swoole's internal key-value cache to speed up the things a bit, reducing the need of an external cache driver.
