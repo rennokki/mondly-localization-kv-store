@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Services\Locale;
+use App\Services\LocaleService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -12,7 +12,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(Locale::class);
+        $this->app->bind(LocaleService::class);
     }
 
     /**

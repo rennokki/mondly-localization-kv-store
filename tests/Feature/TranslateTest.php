@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\LocaleString;
-use App\Services\Locale;
+use App\Services\LocaleService;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 
@@ -43,7 +43,7 @@ class TranslateTest extends TestCase
                 'HELLO_WORLD' => 'Bonjour, le monde!',
                 'WELCOME_TEXT' => 'Hello!',
             ],
-            $this->app->make(Locale::class)->getStringsForLocale('fr'),
+            $this->app->make(LocaleService::class)->getStringsForLocale('fr'),
         );
 
         $this->assertSame(
@@ -52,7 +52,7 @@ class TranslateTest extends TestCase
                 'HELLO_WORLD' => 'Hallo, Welt!',
                 'WELCOME_TEXT' => 'Hallo!',
             ],
-            $this->app->make(Locale::class)->getStringsForLocale('de'),
+            $this->app->make(LocaleService::class)->getStringsForLocale('de'),
         );
 
         $this->assertSame(
@@ -61,7 +61,7 @@ class TranslateTest extends TestCase
                 'HELLO_WORLD' => 'Hello, World!',
                 'WELCOME_TEXT' => 'Hello!',
             ],
-            $this->app->make(Locale::class)->getStringsForLocale('en'),
+            $this->app->make(LocaleService::class)->getStringsForLocale('en'),
         );
     }
 }

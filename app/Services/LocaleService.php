@@ -6,7 +6,7 @@ use App\Models\LocaleString;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Translation\Translator;
 
-class Locale
+class LocaleService
 {
     public static $locales = [
         ['key' => 'en', 'name' => 'English'],

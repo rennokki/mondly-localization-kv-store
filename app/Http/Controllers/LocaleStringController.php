@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\LocaleString;
-use App\Services\Locale;
+use App\Services\LocaleService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use ZipArchive;
@@ -106,13 +106,16 @@ class LocaleStringController extends Controller
         //
     }
 
-    public function download(Request $request, Locale $localeService)
+    /**
+     * Download all locales as a zip file.
+     */
+    public function download(Request $request, LocaleService $localeService)
     {
         $zip = new ZipArchive();
 
         $zip->open('locales.zip', ZipArchive::CREATE | ZipArchive::OVERWRITE);
 
-        foreach (Locale::$locales as $locale) {
+        foreach (LocaleService::$locales as $locale) {
             $zip->addFromString(
                 "{$locale['key']}.json",
                 json_encode($localeService->getStringsForLocale($locale['key'])),
